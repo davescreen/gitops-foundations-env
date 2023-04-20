@@ -1,0 +1,3 @@
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+http://localhost:8080
+admin/gitops8080
