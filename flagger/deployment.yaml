@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: gitops-foundations
-        image: davescreen/gitops-foundations:2.0
+        image: davescreen/gitops-foundations:1.0
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
