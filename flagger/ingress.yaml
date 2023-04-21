@@ -9,9 +9,11 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
-    - host: davescreen.westus2.cloudapp.azure.com
-      http:
+    - http:
         paths:
           - backend:
-              serviceName: gitops-foundations-service
-              servicePort: 80
+              service:
+                name: gitops-foundations-service
+                port:
+                  number: 80
+# host: davescreen.westus2.cloudapp.azure.com
