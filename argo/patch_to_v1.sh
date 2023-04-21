@@ -1,0 +1,1 @@
+kubectl patch deployment gitops-foundations -n argocd-exercise -p '{"spec":{"template":{"spec":{"containers":[{"name":"gitops-foundations","image":"davescreen/gitops-foundations:1.0"}]}}}}'
