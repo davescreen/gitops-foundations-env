@@ -5,17 +5,17 @@ metadata:
   namespace: flagger-exercise
   labels:
     app: gitops-foundations
-    annotations:
-      nginx.ingress.kubernetes.io/rewrite-target: /
-  spec:
-    ingressClassName: nginx
-    rules:
-    - http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: gitops-foundations-service
-                port:
-                  number: 80
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: gitops-foundations-service
+              port:
+                number: 80
