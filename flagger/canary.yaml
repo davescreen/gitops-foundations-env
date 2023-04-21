@@ -10,7 +10,7 @@ spec:
     kind: Deployment
     name: gitops-foundations
   ingressRef:
-    apiVersion: networking.k8s.io/v1beta1
+    apiVersion: networking.k8s.io/v1
     kind: Ingress
     name: gitops-foundations
   autoscalerRef:
