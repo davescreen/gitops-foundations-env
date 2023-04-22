@@ -22,3 +22,9 @@ flux create kustomization flux-helm-app \
 --prune=true \
 --interval=1m \
 --export > ./clusters/flux/flux-helm-app-kustomization.yaml
+
+# Error
+HelmChart 'flux-system/flux-helm-flux-helm-app' is not ready
+
+# Get helmcharts
+kubectl get helmchart -A 
