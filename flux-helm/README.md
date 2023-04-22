@@ -13,3 +13,12 @@ clear && kubectl get all -n flux-helm -o wide
 
 # Delete
 kubectl delete namespace flux-helm
+
+# Setting up flux config
+cd flux-clusters-config
+flux create kustomization flux-helm-app \
+--source=gitops-foundations \
+--path=./flux-helm \
+--prune=true \
+--interval=1m \
+--export > ./clusters/flux/flux-helm-app-kustomization.yaml
