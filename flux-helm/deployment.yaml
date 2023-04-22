@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flux-helm-app
+  namespace: flux-helm
+  labels:
+    app: flux-helm-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: flux-helm-app
+  template:
+    metadata:
+      labels:
+        app: flux-helm-app
+    spec:
+      containers:
+      - name: flux-helm-app
+        image: davescreen/gitops-foundations:2.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          failureThreshold: 2
