@@ -4,5 +4,5 @@ metadata:
   name: helm-gitops-example
   namespace: flux-system
 spec:
-  interval: 1s
+  interval: 30s
   url: https://davescreen.github.io/helm-gitops-example
