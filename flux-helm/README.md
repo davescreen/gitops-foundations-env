@@ -16,13 +16,11 @@ flux create kustomization flux-helm-app \
     --interval=1m \
     --export > ./clusters/flux/flux-helm-app-kustomization.yaml
 ```
-# Error
-HelmChart 'flux-system/flux-helm-flux-helm-app' is not ready
 
-# Get helmcharts
-kubectl get helmchart -A 
-
-clear && kubectl get all -n my-chart-ns -o wide
+# Get status
+kubectl get helmchart -A
+kubectl get all -n my-chart-ns -o wide
+flux get helmrelease --watch -n flux-helm
 
 ## Test on 8082
 ./port-forward-app-8082.sh
