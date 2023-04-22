@@ -4,7 +4,7 @@ metadata:
   name: my-chart-release
   namespace: flux-system
 spec:
-  interval: 1m
+  interval: 1m7s
   chart:
     spec:
       chart: my-chart
@@ -13,6 +13,6 @@ spec:
         kind: HelmRepository
         name: helm-gitops-example
         namespace: flux-system
-      interval: 1m
+      interval: 49s
   values:
     replicaCount: 2
