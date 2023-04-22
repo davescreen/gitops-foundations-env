@@ -17,10 +17,16 @@ flux create kustomization flux-helm-app \
     --export > ./clusters/flux/flux-helm-app-kustomization.yaml
 ```
 
-# Get status
+# Various commands to help get status
+
+Checkout Weave on 9001 (port-forward-gitops.sh)
+
+```
+flux logs
 kubectl get helmchart -A
 kubectl get all -n my-chart-ns -o wide
 flux get helmrelease --watch -n flux-helm
+```
 
 ## Test on 8082
 ./port-forward-app-8082.sh
