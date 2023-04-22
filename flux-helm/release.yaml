@@ -7,10 +7,10 @@ spec:
   interval: 1m
   chart:
     spec:
-      chart: helm-flux-app
+      chart: my-chart
       version: '>= 0.0.1'
       sourceRef:
-        kind: GitRepository
+        kind: HelmRepository
         name: helm-gitops-example
         namespace: flux-system
       interval: 1m
